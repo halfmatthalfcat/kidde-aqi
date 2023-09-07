@@ -4,7 +4,7 @@ ADD  package.json ./package.json
 RUN  bun i
 ADD  schema.prisma ./schema.prisma
 RUN  bunx prisma generate
-ADD  node_modules/.prisma ./node_modules/.prisma
+ADD  node_modules/.prisma/client ./node_modules/.prisma/client
 ADD  tsconfig.json ./tsconfig.json
 ADD  *.ts ./
 ENTRYPOINT bun run start
