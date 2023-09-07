@@ -21,6 +21,7 @@ model Metric {
   hpa       Int
   tvoc      Decimal
   iaq       Decimal
+  co        Decimal
   co2       Decimal
   humidity  Decimal
 

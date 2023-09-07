@@ -29,7 +29,8 @@ cron.schedule(config.CRON, async () => {
     });
 
     if (!metricExists) {
-      const { iaq, iaq_temperature, humidity, hpa, tvoc, co2 } = device;
+      const { co_level, iaq, iaq_temperature, humidity, hpa, tvoc, co2 } =
+        device;
 
       await prisma.metric.create({
         data: {
@@ -39,6 +40,7 @@ cron.schedule(config.CRON, async () => {
           hpa: hpa.value,
           tvoc: tvoc.value,
           iaq: iaq.value,
+          co: co_level,
           co2: co2.value,
           humidity: humidity.value,
         },

@@ -44,6 +44,7 @@ interface Device {
   label: string;
   last_seen: string;
   serial_number: string;
+  co_level: number;
   iaq_temperature: Metric;
   humidity: Metric;
   hpa: Metric;

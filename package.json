@@ -6,7 +6,8 @@
   "author": "halfmatthalfcat <mjo2089@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "bun index.ts"
+    "start": "bun index.ts",
+    "generate": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.2.0",
