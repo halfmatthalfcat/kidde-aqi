@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator local {
+  provider = "prisma-client-js"
+}
+
+model Device {
+  id   String @id
+  name String
+
+  metrics Metric[]
+}
+
+model Metric {
+  deviceId  String
+  timestamp DateTime
+  temp      Decimal
+  hpa       Int
+  tvoc      Decimal
+  iaq       Decimal
+  co2       Decimal
+  humidity  Decimal
+
+  device Device @relation(fields: [deviceId], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  @@id([deviceId, timestamp])
+}
