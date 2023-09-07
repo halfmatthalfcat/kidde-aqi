@@ -1,4 +1,4 @@
-FROM oven/bun
+FROM oven/bun:0.8
 ADD  bun.lockb ./bun.lockb
 ADD  package.json ./package.json
 RUN  bun i
