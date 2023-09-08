@@ -1,4 +1,4 @@
-import config from "./config";
+import config from "./config.ts";
 
 interface KiddeAuth {
   access_token: string;

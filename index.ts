@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import cron from "node-cron";
-import config from "./config";
-import { getDevices } from "./kidde";
+import config from "./config.ts";
+import { getDevices } from "./kidde.ts";
 const prisma = new PrismaClient();
 
 cron.schedule(config.CRON, async () => {

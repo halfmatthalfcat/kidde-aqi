@@ -1,11 +1,9 @@
-FROM oven/bun:0.8
-ADD  bun.lockb ./bun.lockb
+FROM node:18
+ADD  yarn.lock ./yarn.lock
 ADD  package.json ./package.json
-RUN  bun i
-ADD  node_modules ./node_modules
+RUN  yarn
 ADD  schema.prisma ./schema.prisma
-RUN  bunx prisma generate
-ADD  node_modules/.prisma ./node_modules/.prisma
+RUN  npx prisma generate
 ADD  tsconfig.json ./tsconfig.json
 ADD  *.ts ./
-ENTRYPOINT bun run start
+ENTRYPOINT yarn run start
